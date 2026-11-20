@@ -48,7 +48,6 @@
             android:textSize="13sp"
             android:textStyle="bold" />
 
-        <!-- Tarjetas de selección Pasajero / Conductor -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -64,6 +63,7 @@
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true"
+                app:cardBackgroundColor="#FFFFFF"
                 app:cardCornerRadius="12dp"
                 app:strokeColor="#111111"
                 app:strokeWidth="1dp">
@@ -100,6 +100,7 @@
                 android:checkable="true"
                 android:clickable="true"
                 android:focusable="true"
+                app:cardBackgroundColor="#FFFFFF"
                 app:cardCornerRadius="12dp"
                 app:strokeColor="#CCCCCC"
                 app:strokeWidth="1dp">
@@ -137,7 +138,6 @@
             android:textSize="12sp"
             android:visibility="gone" />
 
-        <!-- Nombre(s) -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -157,15 +157,18 @@
             app:boxCornerRadiusBottomEnd="12dp"
             app:boxCornerRadiusBottomStart="12dp"
             app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusTopStart="12dp">
+            app:boxCornerRadiusTopStart="12dp"
+            app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
+                android:hint="Ej. Ana"
+                android:inputType="textPersonName"
+                android:textColor="#111111"
+                android:textColorHint="#888888" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Apellidos lado a lado -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -198,12 +201,16 @@
                     app:boxCornerRadiusBottomEnd="12dp"
                     app:boxCornerRadiusBottomStart="12dp"
                     app:boxCornerRadiusTopEnd="12dp"
-                    app:boxCornerRadiusTopStart="12dp">
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:hintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textPersonName" />
+                        android:hint="Rodríguez"
+                        android:inputType="textPersonName"
+                        android:textColor="#111111"
+                        android:textColorHint="#888888" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
@@ -233,17 +240,21 @@
                     app:boxCornerRadiusBottomStart="12dp"
                     app:boxCornerRadiusTopEnd="12dp"
                     app:boxCornerRadiusTopStart="12dp"
-                    app:helperText="Opcional">
+                    app:helperText="Opcional"
+                    app:helperTextTextColor="#666666"
+                    app:hintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textPersonName" />
+                        android:hint="Hernández"
+                        android:inputType="textPersonName"
+                        android:textColor="#111111"
+                        android:textColorHint="#888888" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Teléfono -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -263,17 +274,19 @@
             app:boxCornerRadiusBottomEnd="12dp"
             app:boxCornerRadiusBottomStart="12dp"
             app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusTopStart="12dp">
+            app:boxCornerRadiusTopStart="12dp"
+            app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="771 123 4567"
+                android:hint="7711234567"
                 android:inputType="phone"
-                android:maxLength="10" />
+                android:maxLength="10"
+                android:textColor="#111111"
+                android:textColorHint="#888888" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Correo -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -293,16 +306,18 @@
             app:boxCornerRadiusBottomEnd="12dp"
             app:boxCornerRadiusBottomStart="12dp"
             app:boxCornerRadiusTopEnd="12dp"
-            app:boxCornerRadiusTopStart="12dp">
+            app:boxCornerRadiusTopStart="12dp"
+            app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="correo@ejemplo.com"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:textColor="#111111"
+                android:textColorHint="#888888" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Contraseña -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -323,15 +338,19 @@
             app:boxCornerRadiusBottomStart="12dp"
             app:boxCornerRadiusTopEnd="12dp"
             app:boxCornerRadiusTopStart="12dp"
-            app:endIconMode="password_toggle">
+            app:endIconMode="password_toggle"
+            app:endIconTint="#666666"
+            app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword" />
+                android:hint="••••••••"
+                android:inputType="textPassword"
+                android:textColor="#111111"
+                android:textColorHint="#888888" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Confirmar contraseña -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -352,15 +371,19 @@
             app:boxCornerRadiusBottomStart="12dp"
             app:boxCornerRadiusTopEnd="12dp"
             app:boxCornerRadiusTopStart="12dp"
-            app:endIconMode="password_toggle">
+            app:endIconMode="password_toggle"
+            app:endIconTint="#666666"
+            app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword" />
+                android:hint="••••••••"
+                android:inputType="textPassword"
+                android:textColor="#111111"
+                android:textColorHint="#888888" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Aviso de privacidad -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -373,6 +396,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Acepto el "
+                android:textColor="#111111"
                 android:textSize="13sp" />
 
             <com.google.android.material.button.MaterialButton

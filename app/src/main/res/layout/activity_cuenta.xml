@@ -27,7 +27,6 @@
                 android:textSize="28sp"
                 android:textStyle="bold" />
 
-            <!-- Cabecera: Avatar con iniciales, Nombre, Rol y Calificación -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -97,12 +96,12 @@
                             android:layout_marginStart="10dp"
                             android:text="★ 5.0"
                             android:textColor="#666666"
-                            android:textSize="13sp" />
+                            android:textSize="13sp"
+                            android:visibility="gone" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Tarjeta gris con Correo y Teléfono -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -158,7 +157,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Botón Mis documentos (solo se muestra si el rol es CONDUCTOR) -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_mis_documentos"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
@@ -171,19 +169,6 @@
                 android:textSize="15sp"
                 android:visibility="gone" />
 
-            <!-- Botón Aviso de privacidad -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_aviso_privacidad"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:gravity="start|center_vertical"
-                android:text="Aviso de privacidad"
-                android:textAllCaps="false"
-                android:textColor="#111111"
-                android:textSize="15sp" />
-
-            <!-- Botón Cerrar sesión -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_cerrar_sesion"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
