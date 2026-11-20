@@ -22,6 +22,16 @@ class ActivityLogin : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // Revisar si ya hay una sesión guardada en el teléfono
+        val prefs = getSharedPreferences("sesion_taxihgo", Context.MODE_PRIVATE)
+        val tokenGuardado = prefs.getString("token", "")
+        if (!tokenGuardado.isNullOrEmpty()) {
+            val intent = Intent(this, ActivityCuenta::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            startActivity(intent)
+            finish()
+            return
+        }
         setContentView(R.layout.activity_login)
 
         presenter = LoginPresenter(this)
@@ -59,7 +69,7 @@ class ActivityLogin : AppCompatActivity() {
     }
 
     fun loginExitoso(datos: dataSesionIniciada) {
-        // Guardar token y datos en SharedPreferences
+        //guarda el token
         val prefs = getSharedPreferences("sesion_taxihgo", Context.MODE_PRIVATE)
         prefs.edit()
             .putString("token", datos.token)
@@ -70,6 +80,7 @@ class ActivityLogin : AppCompatActivity() {
         Toast.makeText(this, "Bienvenido ${datos.usuario.nombre}", Toast.LENGTH_SHORT).show()
 
         val intent = Intent(this, ActivityCuenta::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
         startActivity(intent)
         finish()
     }

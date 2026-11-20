@@ -62,9 +62,12 @@ class ActivityCuenta : AppCompatActivity() {
 
         if (perfil.rol == "CONDUCTOR") {
             tvRol.text = "Conductor"
+            tvCalificacion.text = "★ ${perfil.calificacion}"
+            tvCalificacion.visibility = View.VISIBLE
             btnDocumentos.visibility = View.VISIBLE
         } else {
             tvRol.text = "Pasajero"
+            tvCalificacion.visibility = View.GONE
             btnDocumentos.visibility = View.GONE
         }
     }
