@@ -1,6 +1,23 @@
 package mx.com.bandline.apptaxihgo.model
 import com.google.gson.annotations.SerializedName
-data class dataViaje(
+
+// Un viaje como lo guarda la tabla viajes (crear_viaje.php regresa el viaje creado)
+
+data class dataViaje(@SerializedName("origen_direccion") val origenDireccion: String = "",
+    @SerializedName("origen_lat") val origenLat: Double = 0.0,
+    @SerializedName("origen_lng") val origenLng: Double = 0.0,
+    @SerializedName("destino_direccion") val destinoDireccion: String = "",
+    @SerializedName("destino_lat") val destinoLat: Double = 0.0,
+    @SerializedName("destino_lng") val destinoLng: Double = 0.0,
+    @SerializedName("referencia") val referencia: String? = null, //Ocupa viajepasajero
+    @SerializedName("distancia_m") val distanciaM: Int = 0,
+    @SerializedName("duracion_s") val duracionS: Int = 0,
+    @SerializedName("distancia_km") val distanciaKm: String = "",  //Ocupa viajepasajero
+    @SerializedName("duracion_min") val duracionMin: Int = 0,  //Ocupa viajepasajero
+    @SerializedName("tarifa_estimada") val tarifaEstimada: Double = 0.0,
+    @SerializedName("ruta") val ruta: List<List<Double>> = emptyList(),
+    @SerializedName("fecha_solicitud") val fechaSolicitud: String = "",  //Ocupa viajepasajero
+//Apartado del modulo de viajes de pasajeros
     @SerializedName("id_viaje") val idViaje: Int = 0,
     @SerializedName("folio") val folio: String = "",
     @SerializedName("estado") val estado: String = "",
@@ -8,16 +25,12 @@ data class dataViaje(
     @SerializedName("mensaje") val mensaje: String = "",
     @SerializedName("origen") val origen: dataPunto = dataPunto(),
     @SerializedName("destino") val destino: dataPunto = dataPunto(),
-    @SerializedName("referencia") val referencia: String? = null,
-    @SerializedName("distancia_km") val distanciaKm: Double = 0.0,
-    @SerializedName("duracion_min") val duracionMin: Int = 0,
     @SerializedName("tarifa") val tarifa: Int = 0,
     @SerializedName("eta_min") val etaMin: Int? = null,
     @SerializedName("conductor") val conductor: dataConductorViaje? = null,
     @SerializedName("pasajero") val pasajero: dataPasajeroViaje? = null,
     @SerializedName("cancelado_por") val canceladoPor: String? = null,
     @SerializedName("motivo_cancelacion") val motivoCancelacion: String? = null,
-    @SerializedName("fecha_solicitud") val fechaSolicitud: String? = null,
     @SerializedName("fecha_inicio") val fechaInicio: String? = null,
     @SerializedName("fecha_fin") val fechaFin: String? = null,
     @SerializedName("activo") val activo: Boolean = false,

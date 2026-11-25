@@ -84,4 +84,24 @@ object clsNavegacion {
         val prefs = activity.getSharedPreferences("sesion_taxihgo", Context.MODE_PRIVATE)
         return prefs.getString("rol", "PASAJERO") ?: "PASAJERO"
     }
+    
+
+
+// Abre pantallas de otros módulos por su nombre. Si esa pantalla todavía no está en la app, regresa false y no se cierra.
+    const val MI_VIAJE = "mx.com.bandline.apptaxihgo.view.ActivityMiViaje" //Activityviajepasajero
+    const val MIS_VIAJES = "mx.com.bandline.apptaxihgo.view.ActivityMisViajes"
+    const val EXTRA_FOLIO = "FOLIO"
+
+    fun abrir(actividad: Activity, nombreClase: String, folio: String? = null): Boolean {
+        return try {
+            val intent = Intent(actividad, Class.forName(nombreClase))
+            if (folio != null) intent.putExtra(EXTRA_FOLIO, folio)
+            actividad.startActivity(intent)
+            true
+        } catch (e: ClassNotFoundException) {
+            false
+        } catch (e: ActivityNotFoundException) {
+            false
+        }
+    }
 }

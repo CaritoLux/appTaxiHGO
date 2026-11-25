@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -13,6 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppTaxiHGO">
+
 
         <activity
             android:name=".view.ActivityLogin"
@@ -55,6 +58,15 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".view.ActivityDetalleViaje"
+            android:name=".view.ActivityInicioPasajero"
+            android:exported="false"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".view.ActivityElegirDestino"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".view.ActivityConfirmarViaje"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

@@ -5,8 +5,10 @@ import com.google.gson.annotations.SerializedName
 data class dataRespuesta<T>(
     @SerializedName("exito") val exito: Boolean = false,
     @SerializedName("mensaje") val mensaje: String = "",
-    @SerializedName("datos") val datos: T? = null
+    @SerializedName("datos") val datos: T? = null,
+    @SerializedName("codigo") val codigo: String? = null
 )
+
 
 data class dataPerfil(
     @SerializedName("id_usuario") val idUsuario: Int = 0,
