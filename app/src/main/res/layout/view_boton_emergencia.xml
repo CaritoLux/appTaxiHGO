@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fondo_emergencia"
+    android:layout_width="match_parent"
+    android:layout_height="52dp"
+    android:background="#FDECEA"
+    android:clickable="true"
+    android:focusable="true">
+
+    <ProgressBar
+        android:id="@+id/pb_emergencia"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:progressTint="#F28B82"
+        android:progressBackgroundTint="#FDECEA"
+        android:max="3000"
+        android:progress="0" />
+
+    <TextView
+        android:id="@+id/tv_emergencia"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="SOS · Mantén presionado 3 s"
+        android:textColor="#C62828"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+</FrameLayout>
