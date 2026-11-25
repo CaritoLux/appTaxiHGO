@@ -1,3 +1,70 @@
 <resources>
     <string name="app_name">appTaxiHGO</string>
+
+    <!-- Inicio conductor -->
+    <string name="mapa">Mapa</string>
+    <string name="mi_ubicacion">Mi ubicación</string>
+    <string name="desconectado">Desconectado</string>
+    <string name="disponible">Disponible</string>
+    <string name="estas_desconectado">Estás desconectado</string>
+    <string name="estas_disponible">Estás disponible</string>
+    <string name="activa_disponibilidad">Activa tu disponibilidad para recibir viajes.</string>
+    <string name="esperando_solicitudes">Esperando solicitudes de viaje…</string>
+    <string name="conectarme">Conectarme</string>
+    <string name="desconectarme">Desconectarme</string>
+    <string name="viajes_hoy">Viajes hoy</string>
+    <string name="cobrado_hoy">Cobrado hoy</string>
+    <string name="tu_calificacion">Tu calificación</string>
+    <string name="ubicacion_necesaria_titulo">Necesitamos tu ubicación</string>
+    <string name="ubicacion_necesaria">Activa el GPS y permite la ubicación para poder recibir viajes.</string>
+    <string name="abrir_ajustes">Abrir ajustes</string>
+    <string name="ahora_no">Ahora no</string>
+    <string name="entendido">Entendido</string>
+    <string name="aviso_central_titulo">Aviso de la central</string>
+    <string name="solicitud_terminada">Solicitud terminada</string>
+    <string name="documentos_vencidos_titulo">Documentos vencidos</string>
+    <string name="ir_a_mis_documentos">Ir a mis documentos</string>
+
+    <!-- Oferta -->
+    <string name="nueva_solicitud">NUEVA SOLICITUD</string>
+    <string name="efectivo_estimado">Efectivo · tarifa estimada</string>
+    <string name="a_distancia_de_ti">A %1$s de ti · %2$s</string>
+    <string name="referencia_de">Referencia: %1$s</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="rechazar">Rechazar</string>
+
+    <!-- Viaje conductor -->
+    <string name="llamar">Llamar</string>
+    <string name="navegar">Navegar</string>
+    <string name="llegue">Llegué</string>
+    <string name="iniciar_viaje">Iniciar viaje</string>
+    <string name="finalizar_viaje">Finalizar viaje</string>
+    <string name="cancelar_viaje">Cancelar viaje</string>
+    <string name="etiqueta_ve_por_pasajero">VE POR EL PASAJERO</string>
+    <string name="etiqueta_llegaste">LLEGASTE AL PUNTO</string>
+    <string name="etiqueta_cobra">COBRA %1$s</string>
+    <string name="a_metros_del_punto">A %1$s del punto</string>
+    <string name="esperando_a">Esperando a %1$s · %2$s</string>
+    <string name="hacia">Hacia %1$s</string>
+    <string name="confirmar_inicio_titulo">¿Iniciar el viaje?</string>
+    <string name="confirmar_inicio_mensaje">Confirma que el pasajero ya abordó.</string>
+    <string name="si_iniciar">Sí, iniciar</string>
+    <string name="todavia_no">Todavía no</string>
+    <string name="confirmar_fin_titulo">¿Finalizar el viaje?</string>
+    <string name="cobra_efectivo">Cobra %1$s en efectivo al pasajero.</string>
+    <string name="seguir_en_viaje">Seguir en viaje</string>
+    <string name="cancelado_pasajero_titulo">El pasajero canceló el viaje</string>
+    <string name="sigues_disponible">Sigues disponible para recibir nuevos viajes.</string>
+    <string name="no_se_presento_antes">Disponible 5 min después de marcar Llegué.</string>
+    <string name="no_se_presento_espera">Disponible en %1$s</string>
+    <string name="sin_conexion_reintentando">Sin conexión. Reintentando…</string>
+    <string name="sin_app_mapas">No hay una app de mapas instalada.</string>
+    <string name="sin_telefono">No se pudo abrir el marcador.</string>
+
+    <!-- Navegación -->
+    <string name="nav_inicio">Inicio</string>
+    <string name="nav_viajes">Viajes</string>
+    <string name="nav_ganancias">Ganancias</string>
+    <string name="nav_cuenta">Cuenta</string>
+    <string name="cerrar">Cerrar</string>
 </resources>

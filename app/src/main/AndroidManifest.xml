@@ -13,7 +13,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppTaxiHGO">
-
         <activity
             android:name=".view.ActivityLogin"
             android:exported="true"
@@ -24,7 +23,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".view.MainActivity"
             android:exported="false"
@@ -43,6 +41,18 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".view.ActivityNuevaContrasena"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".view.ActivityInicioConductor"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".view.ActivityViajeConductor"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".view.HojaOferta"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>

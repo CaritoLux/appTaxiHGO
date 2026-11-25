@@ -2,4 +2,22 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="relleno">#17191C</color>
+    <color name="relleno_2">#2A2F35</color>
+    <color name="tarjeta">#202328</color>
+    <color name="tinta">#F1F1F1</color>
+    <color name="tinta_2">#A9AEB5</color>
+    <color name="blanco">#FFFFFF</color>
+    <color name="marca">#F4B71A</color>
+    <color name="marca_oscuro">#5A4A0F</color>
+    <color name="sobre_marca_oscuro">#FFE9A6</color>
+    <color name="sobre_marca">#1A1400</color>
+    <color name="linea">#5B6066</color>
+    <color name="exito">#2E7D32</color>
+    <color name="peligro">#B3261E</color>
+    <color name="enlace">#A8C7FA</color>
+    <color name="navegacion_fondo">#101215</color>
+    <color name="boton_circular">#101215</color>
+    <color name="fondo_boton_principal">#F4B71A</color>
 </resources>
