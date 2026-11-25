@@ -10,9 +10,11 @@ class RecuperarPresenter(private val vista: ActivityRecuperar) {
     private val modelo = RecuperarModel()
 
     fun solicitarCodigo(correo: String) {
+        vista.limpiarErrores()
+
         val email = correo.trim().lowercase()
         if (email.isBlank()) {
-            vista.mostrarError("Ingresa tu correo.")
+            vista.mostrarErrorCorreo("Por favor, ingresa tu correo electrónico.")
             return
         }
 
@@ -25,11 +27,11 @@ class RecuperarPresenter(private val vista: ActivityRecuperar) {
                 if (respuesta.exito) {
                     vista.codigoEnviado(email)
                 } else {
-                    vista.mostrarError(respuesta.mensaje)
+                    vista.mostrarErrorServidor(respuesta.mensaje)
                 }
             } catch (e: Exception) {
                 vista.mostrarCargando(false)
-                vista.mostrarError("Error de red: ${e.localizedMessage}")
+                vista.mostrarErrorServidor("Error de conexión: ${e.localizedMessage}")
             }
         }
     }

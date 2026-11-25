@@ -45,7 +45,15 @@ class ActivityRecuperar : AppCompatActivity() {
         finish()
     }
 
-    fun mostrarError(mensaje: String) {
+    fun limpiarErrores() {
+        tilCorreo.error = null
+    }
+
+    fun mostrarErrorCorreo(mensaje: String) {
+        tilCorreo.error = mensaje
+    }
+
+    fun mostrarErrorServidor(mensaje: String) {
         Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show()
     }
 }

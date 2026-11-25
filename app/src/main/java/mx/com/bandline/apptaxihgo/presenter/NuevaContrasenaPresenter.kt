@@ -12,18 +12,23 @@ class NuevaContrasenaPresenter(private val vista: ActivityNuevaContrasena) {
     private val regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[\\W_])[A-Za-z\\d\\W_]{8,20}\$".toRegex()
 
     fun cambiarContrasena(correo: String, codigo: String, contrasena: String, confirmar: String) {
+        vista.limpiarErrores()
+        var esValido = true
+
         if (codigo.length != 6) {
-            vista.mostrarError("Ingresa el código de 6 dígitos.")
-            return
-        }
-        if (contrasena != confirmar) {
-            vista.mostrarError("Las contraseñas no coinciden.")
-            return
+            vista.mostrarErrorCodigo("Ingresa el código de 6 dígitos.")
+            esValido = false
         }
         if (!contrasena.matches(regex)) {
-            vista.mostrarError("La contraseña debe tener de 8 a 20 caracteres, mayúscula, minúscula, número y símbolo.")
-            return
+            vista.mostrarErrorContrasena("Debe tener 8-20 caracteres, mayúscula, minúscula, número y símbolo.")
+            esValido = false
         }
+        if (contrasena != confirmar) {
+            vista.mostrarErrorConfirmar("Las contraseñas no coinciden.")
+            esValido = false
+        }
+
+        if (!esValido) return
 
         CoroutineScope(Dispatchers.Main).launch {
             try {
@@ -34,11 +39,11 @@ class NuevaContrasenaPresenter(private val vista: ActivityNuevaContrasena) {
                 if (respuesta.exito) {
                     vista.contrasenaCambiada(respuesta.mensaje)
                 } else {
-                    vista.mostrarError(respuesta.mensaje)
+                    vista.mostrarErrorServidor(respuesta.mensaje)
                 }
             } catch (e: Exception) {
                 vista.mostrarCargando(false)
-                vista.mostrarError("Error de red: ${e.localizedMessage}")
+                vista.mostrarErrorServidor("Error de red: ${e.localizedMessage}")
             }
         }
     }
