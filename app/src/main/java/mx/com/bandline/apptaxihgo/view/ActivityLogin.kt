@@ -26,7 +26,7 @@ class ActivityLogin : AppCompatActivity() {
         val prefs = getSharedPreferences("sesion_taxihgo", Context.MODE_PRIVATE)
         val tokenGuardado = prefs.getString("token", "")
         if (!tokenGuardado.isNullOrEmpty()) {
-            val intent = Intent(this, ActivityCuenta::class.java)
+            val intent = Intent(this, ActivityInicioPasajero::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
             startActivity(intent)
             finish()
@@ -79,7 +79,7 @@ class ActivityLogin : AppCompatActivity() {
 
         Toast.makeText(this, "Bienvenido ${datos.usuario.nombre}", Toast.LENGTH_SHORT).show()
 
-        val intent = Intent(this, ActivityCuenta::class.java)
+        val intent = Intent(this, ActivityInicioPasajero::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
         startActivity(intent)
         finish()

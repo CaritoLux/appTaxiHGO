@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="nav_inicio" type="id" />
+    <item name="nav_mis_viajes" type="id" />
+    <item name="nav_cuenta" type="id" />
+</resources>
