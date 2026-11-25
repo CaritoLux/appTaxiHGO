@@ -54,7 +54,23 @@ class ActivityNuevaContrasena : AppCompatActivity() {
         finish()
     }
 
-    fun mostrarError(mensaje: String) {
+    fun limpiarErrores() {
+        tilCodigo.error = null
+        tilContrasena.error = null
+        tilConfirmar.error = null
+    }
+
+    fun mostrarErrorCodigo(mensaje: String) {
+        tilCodigo.error = mensaje
+    }
+    fun mostrarErrorContrasena(mensaje: String) {
+        tilContrasena.error = mensaje
+    }
+    fun mostrarErrorConfirmar(mensaje: String) {
+        tilConfirmar.error = mensaje
+    }
+
+    fun mostrarErrorServidor(mensaje: String) {
         Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show()
     }
 }

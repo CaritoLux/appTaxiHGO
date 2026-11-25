@@ -84,8 +84,20 @@ class ActivityLogin : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
+    fun limpiarErrores() {
+        tilCorreo.error = null
+        tilContrasena.error = null
+    }
 
-    fun mostrarError(mensaje: String) {
+    fun mostrarErrorCorreo(mensaje: String) {
+        tilCorreo.error = mensaje
+    }
+
+    fun mostrarErrorContrasena(mensaje: String) {
+        tilContrasena.error = mensaje
+    }
+
+    fun mostrarErrorServidor(mensaje: String) {
         Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show()
     }
 }

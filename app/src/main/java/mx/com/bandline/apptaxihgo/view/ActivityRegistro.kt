@@ -94,6 +94,22 @@ class ActivityRegistro : AppCompatActivity() {
         finish()
     }
 
+    fun limpiarErrores() {
+        tilNombre.error = null
+        tilPaterno.error = null
+        tilTelefono.error = null
+        tilCorreo.error = null
+        tilContrasena.error = null
+        tilConfirmar.error = null
+    }
+
+    fun mostrarErrorNombre(msj: String) { tilNombre.error = msj }
+    fun mostrarErrorPaterno(msj: String) { tilPaterno.error = msj }
+    fun mostrarErrorTelefono(msj: String) { tilTelefono.error = msj }
+    fun mostrarErrorCorreo(msj: String) { tilCorreo.error = msj }
+    fun mostrarErrorContrasena(msj: String) { tilContrasena.error = msj }
+    fun mostrarErrorConfirmar(msj: String) { tilConfirmar.error = msj }
+
     fun mostrarError(mensaje: String) {
         Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show()
     }
