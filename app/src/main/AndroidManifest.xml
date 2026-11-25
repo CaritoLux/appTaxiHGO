@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Permisos -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -16,62 +17,92 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppTaxiHGO">
 
-
+        <!-- Acceso principal -->
         <activity
             android:name=".view.ActivityLogin"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
+        <!-- Módulo general -->
         <activity
             android:name=".view.MainActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".view.ActivityCuenta"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".view.ActivityRegistro"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".view.ActivityRecuperar"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".view.ActivityNuevaContrasena"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- Módulo del conductor -->
+        <activity
+            android:name=".view.ActivityInicioConductor"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".view.ActivityViajeConductor"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".view.HojaOferta"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Módulo del pasajero -->
         <activity
             android:name=".view.ActivityViajePasajero"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".view.ActivityMisViajes"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".view.ActivityDetalleViaje"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".view.ActivityInicioPasajero"
             android:exported="false"
             android:launchMode="singleTop" />
+
         <activity
             android:name=".view.ActivityElegirDestino"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name=".view.ActivityConfirmarViaje"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
     </application>
 
 </manifest>

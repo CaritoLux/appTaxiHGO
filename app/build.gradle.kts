@@ -47,7 +47,9 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
 
+
     implementation("androidx.recyclerview:recyclerview:1.4.0")
     implementation("com.google.android.gms:play-services-location:21.3.0")
+
     implementation("org.maplibre.gl:android-sdk:11.8.0")
 }

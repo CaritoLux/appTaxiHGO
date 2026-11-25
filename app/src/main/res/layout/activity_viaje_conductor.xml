@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/relleno"
+    android:keepScreenOn="true">
+
+    <org.maplibre.android.maps.MapView
+        android:id="@+id/mapa"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/mapa" />
+
+    <LinearLayout
+        android:id="@+id/capa_superior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <include
+            layout="@layout/include_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp" />
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/hoja"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/bg_hoja"
+        android:elevation="8dp">
+
+        <LinearLayout
+            android:id="@+id/contenido_hoja"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/margen"
+            android:paddingTop="12dp"
+            android:paddingEnd="@dimen/margen"
+            android:paddingBottom="16dp">
+
+            <View
+                android:layout_width="36dp"
+                android:layout_height="4dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/tirador" />
+
+            <TextView
+                android:id="@+id/tv_etiqueta"
+                style="@style/Texto.Pie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.06"
+                android:textColor="@color/tinta" />
+
+            <TextView
+                android:id="@+id/tv_titulo"
+                style="@style/Texto.Titulo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_tarjeta_gris"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <FrameLayout
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/bg_circulo_marca">
+
+                    <TextView
+                        android:id="@+id/tv_iniciales"
+                        style="@style/Texto.Subtitulo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_pasajero"
+                        style="@style/Texto.Subtitulo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/tv_calificacion"
+                        style="@style/Texto.Pie"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:drawablePadding="4dp"
+                        app:drawableStartCompat="@drawable/ic_estrella"
+                        app:drawableTint="@color/tinta" />
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_llamar"
+                    style="@style/Widget.TaxiHGO.BotonCircular"
+                    android:contentDescription="@string/llamar"
+                    app:backgroundTint="@color/blanco"
+                    app:icon="@drawable/ic_llamar" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/grupo_ruta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_tarjeta_gris"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:minHeight="40dp"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/punto_origen" />
+
+                    <TextView
+                        android:id="@+id/tv_origen"
+                        style="@style/Texto.SecundarioMedio"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text=""
+                        android:textColor="@color/tinta" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="12dp"
+                    android:layout_marginStart="11dp"
+                    android:background="@drawable/linea_ruta" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:minHeight="40dp"
+                        android:orientation="horizontal"
+                        android:layout_weight="1">
+
+                        <View
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_marginStart="6dp"
+                            android:background="@drawable/cuadro_destino" />
+
+                        <TextView
+                            android:id="@+id/tv_destino"
+                            style="@style/Texto.SecundarioMedio"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text=""
+                            android:textColor="@color/tinta" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_referencia"
+                style="@style/Texto.Pie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:drawablePadding="6dp"
+                android:gravity="center_vertical"
+                app:drawableStartCompat="@drawable/ic_nota"
+                app:drawableTint="@color/tinta_2" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_navegar"
+                style="@style/Widget.TaxiHGO.Boton.Secundario.Compacto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="@string/navegar"
+                app:icon="@drawable/ic_navegar" />
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/pb_cargando"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="12dp"
+                android:indeterminate="true"
+                android:visibility="gone"
+                app:indicatorColor="@color/tinta"
+                app:indicatorSize="32dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_principal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/llegue" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_cancelar"
+                style="@style/Widget.TaxiHGO.Boton.TextoPeligro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/cancelar_viaje" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>
