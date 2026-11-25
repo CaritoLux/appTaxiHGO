@@ -32,7 +32,9 @@ android {
     }
 }
 
+
 dependencies {
+    implementation(libs.play.services.maps)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.okhttp)
@@ -44,4 +46,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
+
+    implementation("androidx.recyclerview:recyclerview:1.4.0")
+    implementation("com.google.android.gms:play-services-location:21.3.0")
+    implementation("org.maplibre.gl:android-sdk:11.8.0")
 }
