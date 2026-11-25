@@ -26,7 +26,7 @@ class ActivityLogin : AppCompatActivity() {
         val prefs = getSharedPreferences("sesion_taxihgo", Context.MODE_PRIVATE)
         val tokenGuardado = prefs.getString("token", "")
         if (!tokenGuardado.isNullOrEmpty()) {
-            val intent = Intent(this, ActivityCuenta::class.java)
+            val intent = Intent(this, ActivityInicioPasajero::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
             startActivity(intent)
             finish()
@@ -79,13 +79,25 @@ class ActivityLogin : AppCompatActivity() {
 
         Toast.makeText(this, "Bienvenido ${datos.usuario.nombre}", Toast.LENGTH_SHORT).show()
 
-        val intent = Intent(this, ActivityCuenta::class.java)
+        val intent = Intent(this, ActivityInicioPasajero::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
         startActivity(intent)
         finish()
     }
+    fun limpiarErrores() {
+        tilCorreo.error = null
+        tilContrasena.error = null
+    }
 
-    fun mostrarError(mensaje: String) {
+    fun mostrarErrorCorreo(mensaje: String) {
+        tilCorreo.error = mensaje
+    }
+
+    fun mostrarErrorContrasena(mensaje: String) {
+        tilContrasena.error = mensaje
+    }
+
+    fun mostrarErrorServidor(mensaje: String) {
         Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show()
     }
 }
