@@ -1,7 +1,8 @@
 package mx.com.bandline.apptaxihgo.model
 import com.google.gson.Gson
-import mx.com.bandline.apptaxihgo.interfaceapi.RetrofitViaje
+import mx.com.bandline.apptaxihgo.interfaceapi.RetrofitCliente
 import retrofit2.Response
+
 
 class ViajeModel {
 
@@ -10,27 +11,27 @@ class ViajeModel {
     var ultimoCodigo = 0
 
     suspend fun estado(token: String, idViaje: Int): dataRespuesta<dataViaje> {
-        val response = RetrofitViaje.api.estado("Bearer $token", idViaje)
+        val response = RetrofitCliente.apiService.estado("Bearer $token", idViaje)
         return leer(response)
     }
 
     suspend fun cancelar(token: String, idViaje: Int, motivo: String, comentario: String): dataRespuesta<dataViaje> {
-        val response = RetrofitViaje.api.cancelar("Bearer $token", dataCancelar(idViaje, motivo, comentario))
+        val response = RetrofitCliente.apiService.cancelar("Bearer $token", dataCancelar(idViaje, motivo, comentario))
         return leer(response)
     }
 
     suspend fun emergencia(token: String, idViaje: Int): dataRespuesta<dataFolio> {
-        val response = RetrofitViaje.api.emergencia("Bearer $token", dataEmergencia(idViaje))
+        val response = RetrofitCliente.apiService.emergencia("Bearer $token", dataEmergencia(idViaje))
         return leer(response)
     }
 
     suspend fun historial(token: String, periodo: String, pagina: Int): dataRespuesta<dataHistorial> {
-        val response = RetrofitViaje.api.historial("Bearer $token", periodo, pagina)
+        val response = RetrofitCliente.apiService.historial("Bearer $token", periodo, pagina)
         return leer(response)
     }
 
     suspend fun detalle(token: String, idViaje: Int): dataRespuesta<dataViaje> {
-        val response = RetrofitViaje.api.detalle("Bearer $token", idViaje)
+        val response = RetrofitCliente.apiService.detalle("Bearer $token", idViaje)
         return leer(response)
     }
 
