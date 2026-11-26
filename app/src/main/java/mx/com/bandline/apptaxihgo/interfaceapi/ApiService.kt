@@ -1,5 +1,9 @@
 package mx.com.bandline.apptaxihgo.interfaceapi
 
+import mx.com.bandline.apptaxihgo.model.dataCancelar
+import mx.com.bandline.apptaxihgo.model.dataEmergencia
+import mx.com.bandline.apptaxihgo.model.dataFolio
+import mx.com.bandline.apptaxihgo.model.dataHistorial
 import mx.com.bandline.apptaxihgo.model.dataCotizacion
 import mx.com.bandline.apptaxihgo.model.dataCuentaCreada
 import mx.com.bandline.apptaxihgo.model.dataLogin
@@ -46,4 +50,20 @@ interface ApiService {
 
     @POST("crear_viaje.php")
     suspend fun crear(@Header("Authorization") token: String, @Body datos: dataPedirViaje): Response<dataRespuesta<dataViaje>>
+
+    // Viaje del pasajero
+    @GET("obtener_estado_viaje.php")
+    suspend fun estado(@Header("Authorization") token: String, @Query("id_viaje") idViaje: Int): Response<dataRespuesta<dataViaje>>
+
+    @POST("cancelar_viaje_pasajero.php")
+    suspend fun cancelar(@Header("Authorization") token: String, @Body datos: dataCancelar): Response<dataRespuesta<dataViaje>>
+
+    @POST("enviar_emergencia.php")
+    suspend fun emergencia(@Header("Authorization") token: String, @Body datos: dataEmergencia): Response<dataRespuesta<dataFolio>>
+
+    @GET("obtener_historial.php")
+    suspend fun historial(@Header("Authorization") token: String, @Query("periodo") periodo: String, @Query("pagina") pagina: Int): Response<dataRespuesta<dataHistorial>>
+
+    @GET("detalle_viaje.php")
+    suspend fun detalle(@Header("Authorization") token: String, @Query("id_viaje") idViaje: Int): Response<dataRespuesta<dataViaje>>
 }
