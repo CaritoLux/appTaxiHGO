@@ -22,16 +22,24 @@ class ActivityLogin : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         // Revisar si ya hay una sesión guardada en el teléfono
         val prefs = getSharedPreferences("sesion_taxihgo", Context.MODE_PRIVATE)
         val tokenGuardado = prefs.getString("token", "")
+        val rolGuardado = prefs.getString("rol", "")
+
         if (!tokenGuardado.isNullOrEmpty()) {
-            val intent = Intent(this, ActivityInicioPasajero::class.java)
+            val intent = if (rolGuardado == "CONDUCTOR") {
+                Intent(this, ActivityInicioConductor::class.java)
+            } else {
+                Intent(this, ActivityInicioPasajero::class.java)
+            }
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
             startActivity(intent)
             finish()
             return
         }
+
         setContentView(R.layout.activity_login)
 
         presenter = LoginPresenter(this)
@@ -69,7 +77,7 @@ class ActivityLogin : AppCompatActivity() {
     }
 
     fun loginExitoso(datos: dataSesionIniciada) {
-        //guarda el token
+        //guarda el token y rol
         val prefs = getSharedPreferences("sesion_taxihgo", Context.MODE_PRIVATE)
         prefs.edit()
             .putString("token", datos.token)
@@ -79,11 +87,17 @@ class ActivityLogin : AppCompatActivity() {
 
         Toast.makeText(this, "Bienvenido ${datos.usuario.nombre}", Toast.LENGTH_SHORT).show()
 
-        val intent = Intent(this, ActivityInicioPasajero::class.java)
+        val intent = if (datos.usuario.rol == "CONDUCTOR") {
+            Intent(this, ActivityInicioConductor::class.java)
+        } else {
+            Intent(this, ActivityInicioPasajero::class.java)
+        }
+
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
         startActivity(intent)
         finish()
     }
+
     fun limpiarErrores() {
         tilCorreo.error = null
         tilContrasena.error = null
